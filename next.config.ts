@@ -8,7 +8,7 @@ const nextConfig = {
     // Required if you're using basePath in production
     basePath: process.env.NODE_ENV === 'production' ? '/surgery-ai' : '',
     // Optional: Add trailing slashes to URLs
-    trailingSlash: true
+    trailingSlash: true,
     distDir: 'out'
 }
 
