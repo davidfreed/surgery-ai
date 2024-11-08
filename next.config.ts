@@ -1,17 +1,12 @@
-import type { NextConfig } from "next";
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',  // Required for static site generation
+    output: 'export',  // Changed back to 'export' from 'static'
     images: {
-      unoptimized: true  // Required for static export
+      unoptimized: true
     },
-    // Required if you're using basePath in production
-    basePath: process.env.NODE_ENV === 'production' ? '/surgery-ai' : '',
-    // Optional: Add trailing slashes to URLs
+    assetPrefix: process.env.NODE_ENV === 'production' ? 'https://surgery-ai.pages.dev' : '',  // Add your Cloudflare URL
     trailingSlash: true,
-    distDir: 'out'
-}
-
-module.exports = nextConfig
-
-export default nextConfig;
+    // Remove distDir: 'out' as it's not needed with output: 'export'
+  }
+  
+  module.exports = nextConfig
