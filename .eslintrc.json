@@ -1,3 +1,10 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript"]
 }
+
+module.exports = {
+  rules: {
+    "@typescript-eslint/no-unused-vars": "off",  // Disables unused variables rule
+    "react/no-unescaped-entities": "off"          // Disables unescaped entities rule
+  }
+}

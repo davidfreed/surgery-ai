@@ -16,26 +16,28 @@ import {
   Microscope
 } from 'lucide-react'
 
-const ParallaxElement = ({ children, speed = 0.5 }) => {
-  const ref = useRef(null)
+const ParallaxElement: React.FC<{ children: React.ReactNode; speed?: number }> = ({ children, speed = 0.5 }) => {
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       const element = ref.current
-      if (element) {
-        const scrollTop = window.pageYOffset
+      if (element && typeof window !== 'undefined') {
+        const scrollTop = window.scrollY
         element.style.transform = `translateY(${scrollTop * speed}px)`
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
+    }
   }, [speed])
 
   return <div ref={ref}>{children}</div>
 }
 
-const AnimatedIcon = ({ Icon, color }) => (
+const AnimatedIcon: React.FC<{ Icon: React.ElementType; color: string }> = ({ Icon, color }) => (
   <div className="relative w-16 h-16 mx-auto mb-4">
     <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-200 rounded-full animate-pulse" />
     <div className="absolute inset-0 flex items-center justify-center">
@@ -218,7 +220,6 @@ export default function HowItWorks() {
                   <Link href="/get-started">
                     <Button 
                         className="bg-white text-[#4A6FA5] hover:bg-gray-100 px-8 py-3 text-lg font-semibold rounded-full"
-                      onClick={() => {/* your action */}}
                     >
                       Get Advice From Dr. Anup
                     </Button>

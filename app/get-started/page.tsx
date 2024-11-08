@@ -1,17 +1,49 @@
 'use client'
 
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { Button } from '@/components/ui/button'
 import { Shield, Clock } from 'lucide-react'
 
 export default function Contact() {
   const [submitting, setSubmitting] = useState(false)
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
-    // Add your form submission logic here
-    setSubmitting(false)
+    
+    try {
+      const form = e.target as HTMLFormElement;
+      const formData = new FormData(form);
+      
+      // Validate all required fields
+      const name = formData.get('name')?.toString().trim();
+      const email = formData.get('email')?.toString().trim();
+      const description = formData.get('description')?.toString().trim();
+      
+      if (!name || !email || !description) {
+        alert('Please fill in all required fields');
+        setSubmitting(false);
+        return;
+      }
+      
+      const result = await emailjs.sendForm(
+        'service_m7v7rwu',
+        'template_wz6fuxf',
+        form,
+        'ZRgvTpy3y-Yp9FEkf'
+      );
+      
+      if (result.text === 'OK') {
+        alert('Thank you! We will contact you shortly.');
+        form.reset();
+      }
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('Sorry, there was an error sending your message. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (

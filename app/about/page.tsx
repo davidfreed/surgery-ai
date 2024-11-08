@@ -8,7 +8,7 @@ export default function About() {
         <section className="py-16 bg-[#F0F4F8]">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl font-bold mb-8 text-[#4A6FA5] text-center">About Surgery.AI</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               <div>
                 <Image
                   src="/images/anup.jpg"
@@ -18,7 +18,7 @@ export default function About() {
                   className="rounded-full shadow-lg"
                 />
               </div>
-              <div className = "flex flex-col gap-2">
+              <div className = "flex flex-col flex-grow gap-2">
                 <h2 className="text-2xl font-semibold mb-6 text-[#4A6FA5]">Our Founder's Vision</h2>
                 <p className="text-lg mb-6">
                   Surgery.AI was founded by Dr. Anup Pradhan, Chair of Orthopedic Surgery at Medical City Dallas, with a vision to revolutionize how patients receive surgical opinions.
