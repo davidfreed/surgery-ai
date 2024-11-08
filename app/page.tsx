@@ -15,6 +15,11 @@ import {
   Upload
 } from 'lucide-react'
 
+export const metadata = {
+  title: 'Surgery.AI',
+  description: 'Expert Surgical Guidance in 24 Hours',
+}
+
 export default function Home() {
   return (
     <div>

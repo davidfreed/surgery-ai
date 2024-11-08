@@ -1,30 +1,14 @@
+'use client'
 import './globals.css'
+import Header from '../components/Header'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-
-export const metadata = {
-  title: 'Surgery.AI',
-  description: 'Expert Surgical Guidance in 24 Hours',
-}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
         <div className="flex flex-col min-h-screen">
-          <header className="bg-white shadow-md">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-              <Link href="/" className="text-2xl font-bold text-[#4A6FA5]">Surgery.AI</Link>
-            <nav className="hidden md:flex space-x-6">
-              <Link href="/" className="text-[#4A6FA5] hover:text-[#9BA9B9]">Home</Link>
-              <Link href="/about" className="text-[#4A6FA5] hover:text-[#9BA9B9]">About</Link>
-              <Link href="/how-it-works" className="text-[#4A6FA5] hover:text-[#9BA9B9]">How It Works</Link>
-            </nav>
-              <Link href="/get-started">
-                <Button className="bg-[#4A6FA5] text-white hover:bg-[#3A5A8C]">Get Started</Button>
-              </Link>
-            </div>
-          </header>
+          <Header />
           {children}
         </div>
 
