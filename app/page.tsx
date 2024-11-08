@@ -36,7 +36,7 @@ export default function Home() {
               <p className="text-xl mb-8 text-[#333333]">12 million U.S. adults are misdiagnosed a year. You don't have to be one.
                 Our team of Texas' top surgeons will give you expert guidance within 24 hours. Register below to get started.
               </p>
-              <Link href="/find-a-surgeon">
+              <Link href="/get-started">
                 <Button size="lg" className="bg-[#4A6FA5] text-white hover:bg-[#3A5A8C] text-lg md:text-xl py-3 px-6">
                   Find A Surgeon
                 </Button>
@@ -173,7 +173,7 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Make an Informed Decision?</h2>
             <p className="text-xl mb-8">Get expert surgical guidance tailored to your needs.</p>
-            <Link href="/find-appointment">
+            <Link href="/get-started">
               <Button size="lg" className="bg-white text-[#4A6FA5] hover:bg-[#F0F4F8] text-lg md:text-xl py-3 px-6">
                 Find An Appointment Today
               </Button>

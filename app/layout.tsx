@@ -1,4 +1,4 @@
-import './globals.css'
+import '@/app/globals.css'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
@@ -7,11 +7,7 @@ export const metadata = {
   description: 'Expert Surgical Guidance in 24 Hours',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
