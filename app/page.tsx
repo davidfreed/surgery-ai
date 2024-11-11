@@ -37,9 +37,9 @@ export default function Home() {
               />
             </div>
             <div className="md:w-1/2 md:pl-12 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#4A6FA5]">Expert Guidance in 24 Hours</h1>
-              <p className="text-xl mb-8 text-[#333333]">12 million U.S. adults are misdiagnosed a year. You don't have to be one.
-                Our team of Texas' top surgeons will give you expert guidance within 24 hours. Register below to get started.
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#4A6FA5]">Surgery Doesn't Have To Be A Leap Of Faith</h1>
+              <p className="text-xl mb-8 text-[#333333]">12 million U.S. adults are misdiagnosed a year. Surgery.AI leverages AI and expert insights to ensure 
+                your diagnosis is correct and your treatment is the right one.
               </p>
               <Link href="/get-started">
                 <Button size="lg" className="bg-[#4A6FA5] text-white hover:bg-[#3A5A8C] text-lg md:text-xl py-3 px-6">
