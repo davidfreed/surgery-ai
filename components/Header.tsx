@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md relative">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-[#4A6FA5]">Surgery.AI</Link>
+        <Link href="/" className="text-2xl font-bold text-[#4A6FA5]">CarePath</Link>
         
         {/* Hamburger button for mobile */}
         <button 
@@ -30,7 +30,6 @@ export default function Header() {
         <nav className="hidden md:flex space-x-6">
           <Link href="/" className="text-[#4A6FA5] hover:text-[#9BA9B9]">Home</Link>
           <Link href="/about" className="text-[#4A6FA5] hover:text-[#9BA9B9]">About</Link>
-          <Link href="/how-it-works" className="text-[#4A6FA5] hover:text-[#9BA9B9]">How It Works</Link>
         </nav>
 
         {/* Desktop Get Started Button */}
@@ -45,7 +44,6 @@ export default function Header() {
           <nav className="flex flex-col space-y-4 px-4">
             <Link href="/" className="text-[#4A6FA5] hover:text-[#9BA9B9]">Home</Link>
             <Link href="/about" className="text-[#4A6FA5] hover:text-[#9BA9B9]">About</Link>
-            <Link href="/how-it-works" className="text-[#4A6FA5] hover:text-[#9BA9B9]">How It Works</Link>
             <Link href="/get-started">
               <Button className="w-full bg-[#4A6FA5] text-white hover:bg-[#3A5A8C]">Get Started</Button>
             </Link>

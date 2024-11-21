@@ -7,28 +7,38 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const testimonials = [
   {
     id: 1,
-    name: "John D. (Austin, TX)",
-    quote: "Surgery.AI provided me with invaluable insights that helped me make an informed decision about my surgery. I'm grateful for their expert guidance.",
+    name: "Dr. Michael R., MD",
+    title: "Orthopedic Surgeon",
+    location: "Dallas, TX",
+    quote: "CarePath has transformed my practice. My administrative workload is down 70%, and I've been able to increase my surgical volume by 40% while providing better care.",
   },
   {
     id: 2,
-    name: "Kevin L. (Laredo, TX)",
-    quote: "The speed and accuracy of Surgery.AI's analysis amazed me. Within 24 hours, I had a clear understanding of my options.",
+    name: "Dr. Sarah K., MD",
+    title: "Sports Medicine Surgeon",
+    location: "Austin, TX",
+    quote: "The 24/7 PA coverage is a game-changer. My patients get immediate responses, and I haven't had to take a midnight call in months. It's revolutionized my work-life balance.",
   },
   {
     id: 3,
-    name: "Ellen T. (New Orleans, LA)",
-    quote: "Thanks to Surgery.AI, I avoided an unnecessary procedure and found a less invasive alternative. Their service is truly life-changing.",
+    name: "Dr. James L., MD",
+    title: "Joint Replacement Specialist",
+    location: "Houston, TX",
+    quote: "Their proactive complication monitoring has reduced our readmission rates by 35%. My patients love the concierge-level care, and I can focus entirely on surgeries.",
   },
   {
     id: 4,
-    name: "Ignacio L. (Houston, TX)",
-    quote: "The detailed analysis I received helped me avoid an unnecessary surgery. Their expert guidance was invaluable in making this important decision.",
+    name: "Dr. Patricia M., MD",
+    title: "Orthopedic Surgeon",
+    location: "San Antonio, TX",
+    quote: "Since implementing CarePath, patient satisfaction scores are up 50%. The platform handles all routine follow-ups, letting me focus on complex cases.",
   },
   {
     id: 5,
-    name: "Dana M. (Dallas, TX)",
-    quote: "Within 24 hours, I had a clear understanding of all my surgical options. The service was professional, thorough, and exactly what I needed.",
+    name: "Dr. Robert H., MD",
+    title: "Sports Medicine Specialist",
+    location: "Fort Worth, TX",
+    quote: "The ROI has been incredible. Reduced administrative burden, increased surgical volume, and happier patients. CarePath delivers exactly what they promise.",
   }
 ]
 
@@ -103,6 +113,7 @@ export default function TestimonialCarousel() {
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
                 <p className="font-semibold text-[#4A6FA5]">{testimonial.name}</p>
+                <p className="text-sm text-gray-500">{testimonial.title}, {testimonial.location}</p>
               </div>
             </div>
           </div>

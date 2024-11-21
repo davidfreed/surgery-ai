@@ -16,26 +16,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4">Surgery.AI</h3>
-                <p>Expert surgical guidance powered by AI and leading medical professionals.</p>
+                <h3 className="text-xl font-semibold mb-4">CarePath</h3>
+                <p>Premium post-op care platform for orthopedic surgeons and their patients.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
                   <li><Link href="/" className="hover:text-[#F0F4F8]">Home</Link></li>
                   <li><Link href="/about" className="hover:text-[#F0F4F8]">About</Link></li>
-                  <li><Link href="/how-it-works" className="hover:text-[#F0F4F8]">How It Works</Link></li>
-                  <li><Link href="/get-started" className="hover:text-[#F0F4F8]">Get Expert Guidance</Link></li>
+                  <li><Link href="/get-started" className="hover:text-[#F0F4F8]">Get A Demo</Link></li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-                <p>Email: info@surgery.ai</p>
+                <p>Email: hello@carepath.com</p>
                 <p>Phone: (512) 415-0300</p>
               </div>
             </div>
             <div className="mt-8 text-center">
-              <p>&copy; 2024 Surgery.AI. All rights reserved.</p>
+              <p>&copy; 2024 CarePath. All rights reserved.</p>
             </div>
           </div>
         </footer>

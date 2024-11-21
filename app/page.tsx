@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import TestimonialCarousel from '../components/TestimonialCarousel'
 import { 
-  ClipboardList, 
-  Brain, 
-  FileText, 
+  UserPlus,
+  Link as LinkIcon,
+  Stethoscope,
   Shield, 
   Clock, 
   Search,
@@ -16,8 +15,8 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Surgery.AI',
-  description: 'Expert Surgical Guidance in 24 Hours',
+  title: 'CarePath',
+  description: 'Premium Post-Op Care Platform for Orthopedic Surgeons',
 }
 
 export default function Home() {
@@ -27,111 +26,81 @@ export default function Home() {
         {/* Hero Section */}
         <section className="bg-[#F0F4F8] py-12">
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 md:pl-12 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#4A6FA5]">
+                Double Your Surgeries. 
+                Deliver 5-Star Patient Care
+              </h1>
+              <p className="text-xl mb-8 text-[#333333]">
+                Our elite team will handles all your post-op care, giving your patients 24/7 concierge support. 
+              </p>
+              <p className="text-xl mb-8 text-[#333333]">
+                We do the paperwork. You focus on the OR.
+              </p>
+              <Link href="/get-started">
+                <Button size="lg" className="bg-[#4A6FA5] text-white hover:bg-[#3A5A8C] text-lg md:text-xl py-3 px-6">
+                  Get A Demo Today
+                </Button>
+              </Link>
+            </div>
             <div className="md:w-1/2 mb-8 md:mb-0">
               <Image 
                 src="/images/surgery.jpg" 
-                alt="Surgery.AI Hero Image" 
+                alt="Premium Patient Care" 
                 width={600} 
                 height={400} 
                 className="rounded-lg shadow-lg"
               />
             </div>
-            <div className="md:w-1/2 md:pl-12 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#4A6FA5]">Surgery Doesn't Have To Be A Leap Of Faith</h1>
-              <p className="text-xl mb-8 text-[#333333]">12 million U.S. adults are misdiagnosed a year. Surgery.AI leverages AI and expert insights to ensure 
-                your diagnosis is correct and your treatment is the right one.
-              </p>
-              <Link href="/get-started">
-                <Button size="lg" className="bg-[#4A6FA5] text-white hover:bg-[#3A5A8C] text-lg md:text-xl py-3 px-6">
-                  Find A Surgeon
-                </Button>
-              </Link>
-            </div>
           </div>
         </section>
 
-        {/* Founder Section */}
-        {/*
-        <section className="py-16">
-          <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <Image 
-                src="/images/anup.jpg" 
-                alt="Dr. Anup Pradhan" 
-                width={400} 
-                height={400} 
-                className="rounded-full shadow-lg"
-              />
-            </div>
-            <div className="md:w-1/2 md:pl-8">
-              <h2 className="text-3xl font-bold mb-4 text-[#4A6FA5]">About Our Founder</h2>
-              <p className="text-lg text-[#333333]">
-                Surgery.AI was founded by Dr. Anup Pradhan, Chair of Orthopedic Surgery at Medical City Dallas. 
-                He has personally trained the platform to reflect the judgment of expert surgeons, allowing him 
-                to help more patients in need.
-              </p>
-            </div>
-          </div>
-        </section> */}
-
-        {/* How Surgery.AI Works Section */}
+        {/* How OrthoAlly Works Section */}
         <section className="py-5 bg-[#F0F4F8]">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-[#333333]">How Surgery.AI Works</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-[#333333]">How It Works</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Upload className="w-20 h-20 text-[#4A6FA5]" />
+                  <UserPlus className="w-20 h-20 text-[#4A6FA5]" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Upload Your Medical Records</h3>
-                <p className="text-[#333333]">Share as much or as little as you're comfortable with -- we're fully HIPAA compliant, so your data is always secure</p>
+                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Partner With Us</h3>
+                <p className="text-[#333333]">Integrate our platform into your practice. We'll provide your patients with 
+                a seamless post-op experience.</p>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Brain className="w-20 h-20 text-[#4A6FA5]" />
+                  <LinkIcon className="w-20 h-20 text-[#4A6FA5]" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">AI-Powered Analysis</h3>
-                <p className="text-[#333333]">Our AI agent processes your medical records, imaging, and lab results, then searches
-                  the latest medical literature for outcomes that align with your case.
-                </p>
+                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Share Access</h3>
+                <p className="text-[#333333]">Your patients receive a link to our portal after surgery, giving them 
+                instant access to elite post-op care.</p>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <FileCheck className="w-20 h-20 text-[#4A6FA5]" />
+                  <Stethoscope className="w-20 h-20 text-[#4A6FA5]" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Expert Review</h3>
-                <p className="text-[#333333]">Our team of elite surgeons will review the analysis and send you a clear, easy-to-understand report
-                  in less than 24 hours explaining your surgical options.
-                </p>
+                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">24/7 Care</h3>
+                <p className="text-[#333333]">Our experienced PAs handle round-the-clock post-op care and follow-ups. 
+                You'll never need to take another routine call again.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Partner Logos Section */}
-        <section className="py-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-center mb-8 text-[#333333]">Our Partners</h2>
-            <div className="flex justify-center items-center space-x-8">
-              <Image src="/images/logo-1.png" alt="Partner 1" width={150} height={50} />
-              <Image src="/images/logo-2.png" alt="Partner 2" width={150} height={50} />
-              {/* <Image src="/images/logo-3.png" alt="Partner 3" width={100} height={50} /> */}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Surgery.AI Section */}
+        {/* Why Choose OrthoAlly Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-[#333333]">Why Choose Surgery.AI?</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-[#333333]">Why Choose CarePath?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex items-start">
                 <div className="bg-[#4A6FA5] rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
                   <span className="text-white font-bold">1</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Expert Review</h3>
-                  <p className="text-[#333333]">Personalized guidance from leading surgical experts, ensuring you receive the best possible advice for your unique situation.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Increased Practice Efficiency</h3>
+                  <p className="text-[#333333]">Slash administrative workload by 70% while delivering premium care. 
+                  Our PAs handle everything from routine follow-ups to complication prevention.</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -139,8 +108,8 @@ export default function Home() {
                   <span className="text-white font-bold">2</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Comprehensive Analysis</h3>
-                  <p className="text-[#333333]">Data-driven insights from thousands of similar cases, providing a thorough understanding of your options and potential outcomes.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Enhanced Patient Satisfaction</h3>
+                  <p className="text-[#333333]">Provide concierge-level care that sets your practice apart. Patients get immediate access to care when they need it most.</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -148,8 +117,8 @@ export default function Home() {
                   <span className="text-white font-bold">3</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Clear Direction</h3>
-                  <p className="text-[#333333]">Receive decisive recommendations within 24 hours, allowing you to make informed decisions about your surgical care quickly.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Proactive Complication Prevention</h3>
+                  <p className="text-[#333333]">Our system flags potential issues before they become serious, reducing emergency calls and improving outcomes.</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -157,30 +126,43 @@ export default function Home() {
                   <span className="text-white font-bold">4</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Cost-Effective</h3>
-                  <p className="text-[#333333]">Save time and money compared to traditional second opinions, without compromising on the quality of guidance you receive.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Seamless Integration</h3>
+                  <p className="text-[#333333]">Easy implementation with your existing workflow. We handle the technical setup and staff training.</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Testimonials Section */}
+        {/* Success Metrics Section */}
         <section className="py-16 bg-[#F0F4F8]">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-[#333333]">Hear From Our Patients</h2>
-            <TestimonialCarousel />
+            <h2 className="text-3xl font-bold text-center mb-12 text-[#333333]">Proven Results</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-8 rounded-lg shadow-md text-center">
+                <h3 className="text-4xl font-bold text-[#4A6FA5] mb-2">70%</h3>
+                <p className="text-lg text-[#333333]">Reduction in administrative workload</p>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-md text-center">
+                <h3 className="text-4xl font-bold text-[#4A6FA5] mb-2">24/7</h3>
+                <p className="text-lg text-[#333333]">Patient support coverage</p>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-md text-center">
+                <h3 className="text-4xl font-bold text-[#4A6FA5] mb-2">95%</h3>
+                <p className="text-lg text-[#333333]">Patient satisfaction rate</p>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Final CTA Section */}
         <section className="py-16 bg-[#3A5A8C] text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Make an Informed Decision?</h2>
-            <p className="text-xl mb-8">Get expert surgical guidance tailored to your needs.</p>
-            <Link href="/get-started">
+            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Practice?</h2>
+            <p className="text-xl mb-8">See how CarePath can enhance your patient care while saving you time.</p>
+            <Link href="/get-demo">
               <Button size="lg" className="bg-white text-[#4A6FA5] hover:bg-[#F0F4F8] text-lg md:text-xl py-3 px-6">
-                Find An Appointment Today
+                Schedule a Demo
               </Button>
             </Link>
           </div>

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { Button } from '@/components/ui/button'
-import { Shield, Clock } from 'lucide-react'
+import { Toaster, toast } from 'react-hot-toast'
 
 export default function Contact() {
   const [submitting, setSubmitting] = useState(false)
@@ -19,10 +19,11 @@ export default function Contact() {
       // Validate all required fields
       const name = formData.get('name')?.toString().trim();
       const email = formData.get('email')?.toString().trim();
-      const description = formData.get('description')?.toString().trim();
+      const surgeries = formData.get('surgeries')?.toString().trim();
+      const address = formData.get('address')?.toString().trim();
       
-      if (!name || !email || !description) {
-        alert('Please fill in all required fields');
+      if (!name || !email || !surgeries || !address) {
+        toast.error('Please fill in all required fields');
         setSubmitting(false);
         return;
       }
@@ -35,12 +36,18 @@ export default function Contact() {
       );
       
       if (result.text === 'OK') {
-        alert('Thank you! We will contact you shortly.');
+        toast.success('Thank you! We will contact you within 24 hours to schedule a demo.', {
+          duration: 5000,
+          style: {
+            background: '#4A6FA5',
+            color: '#fff',
+          },
+        });
         form.reset();
       }
     } catch (error) {
       console.error('Failed to send email:', error);
-      alert('Sorry, there was an error sending your message. Please try again.');
+      toast.error('Sorry, there was an error sending your message. Please try again.');
     } finally {
       setSubmitting(false);
     }
@@ -48,18 +55,18 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
+      <Toaster position="top-center" />
       <div className="container mx-auto px-4 max-w-2xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
           {/* Header */}
           <h1 className="text-3xl font-bold text-center text-[#4A6FA5] mb-4">
-            Get Started with Surgery.AI
+            Get Started with CarePath
           </h1>
           
           {/* Info Message */}
           <div className="bg-[#4A6FA5]/5 rounded-lg p-6 mb-8">
             <p className="text-gray-700 mb-1">
-              Upon submission, we will contact you shortly with a secure link to our HIPAA-compliant platform 
-              where you can safely upload your medical documents.
+              We'll reach out within 24 hours to schedule a personalized demo of how CarePath can transform your practice.
             </p>
           </div>
 
@@ -75,7 +82,7 @@ export default function Contact() {
                 name="name"
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#4A6FA5] focus:border-[#4A6FA5] outline-none"
-                placeholder="John Smith"
+                placeholder="Dr. John Smith"
               />
             </div>
 
@@ -89,21 +96,35 @@ export default function Contact() {
                 name="email"
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#4A6FA5] focus:border-[#4A6FA5] outline-none"
-                placeholder="john@example.com"
+                placeholder="john@practice.com"
               />
             </div>
 
             <div>
-              <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
-                Brief Description of Your Situation
+              <label htmlFor="surgeries" className="block text-sm font-medium text-gray-700 mb-1">
+                Approximate Surgeries Per Year
+              </label>
+              <input
+                type="number"
+                id="surgeries"
+                name="surgeries"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#4A6FA5] focus:border-[#4A6FA5] outline-none"
+                placeholder="500"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
+                Practice Address
               </label>
               <textarea
-                id="description"
-                name="description"
+                id="address"
+                name="address"
                 required
-                rows={4}
+                rows={3}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#4A6FA5] focus:border-[#4A6FA5] outline-none"
-                placeholder="Please describe your current medical situation and what type of surgical guidance you're seeking..."
+                placeholder="123 Medical Center Drive, Suite 100&#10;Dallas, TX 75001"
               />
             </div>
 
@@ -112,13 +133,13 @@ export default function Contact() {
               className="w-full bg-[#4A6FA5] text-white hover:bg-[#3A5A8C] py-3 text-lg font-semibold"
               disabled={submitting}
             >
-              {submitting ? 'Submitting...' : 'Submit Request'}
+              {submitting ? 'Submitting...' : 'Schedule Demo'}
             </Button>
           </form>
 
           {/* Privacy Note */}
           <p className="text-sm text-gray-500 text-center mt-6">
-            Your information is protected by our privacy policy and HIPAA compliance standards.
+            Your information is protected by our privacy policy.
           </p>
         </div>
       </div>

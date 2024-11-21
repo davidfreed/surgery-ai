@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
 export default function About() {
@@ -7,9 +8,9 @@ export default function About() {
       <main className="flex-grow">
         <section className="py-16 bg-[#F0F4F8]">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-bold mb-8 text-[#4A6FA5] text-center">About Surgery.AI</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              <div>
+            <h1 className="text-4xl font-bold mb-8 text-[#4A6FA5] text-center">About CarePath</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 items-center">
+              <div className="flex justify-center">
                 <Image
                   src="/images/anup.jpg"
                   alt="Dr. Anup Pradhan"
@@ -18,16 +19,13 @@ export default function About() {
                   className="rounded-full shadow-lg"
                 />
               </div>
-              <div className = "flex flex-col flex-grow gap-2">
+              <div className="flex flex-col flex-grow gap-2">
                 <h2 className="text-2xl font-semibold mb-6 text-[#4A6FA5]">Our Founder's Vision</h2>
                 <p className="text-lg mb-6">
-                  Surgery.AI was founded by Dr. Anup Pradhan, Chair of Orthopedic Surgery at Medical City Dallas, with a vision to revolutionize how patients receive surgical opinions.
-                </p>
-                <p className="text-lg mb-6">
-                  Throughout his career, Dr. Pradhan witnessed patients receiving drastically different opinions from various doctors. In one striking case, a patient was given recommendations ranging from a simple meniscus trimming to a total knee replacement - a stark contrast in treatment approaches.
+                  As Chair of Orthopedic Surgery at Medical City Dallas, Dr. Anup Pradhan saw firsthand how the traditional post-op care model was failing both surgeons and patients. His practice was spending countless hours on paperwork and rushed follow-ups, while patients struggled to drive across town for brief check-ins.
                 </p>
                 <p className="text-lg">
-                  This inconsistency in medical advice inspired Dr. Pradhan to create a solution that would provide patients with the most informed, consistent, and reliable surgical guidance possible, all while addressing the significant challenges patients face when seeking second opinions.
+                  Seeing new patients waiting months for surgeries while his team was overwhelmed with routine post-op care, Dr. Pradhan knew something had to change. He implemented this solution in his own practice first, transforming how his team delivered post-op care. The results were immediate: better patient outcomes, more efficient practice management, and significantly reduced wait times for new surgeries.
                 </p>
               </div>
             </div>
@@ -35,64 +33,64 @@ export default function About() {
         </section>
 
         <section className="py-16">
-        <div className="container mx-auto px-4 py-8">
-          <h2 className="text-3xl font-bold text-center text-[#4A6FA5] mb-6">The Real Cost of a Second Opinion</h2>
-          
-          <p className="text-center mb-8 max-w-3xl mx-auto">
-            Dr. Pradhan recognized that traditional second opinions come with hidden costs that go far beyond just the consultation fee. These challenges can be overwhelming for patients seeking the best care:
-          </p>
+          <div className="container mx-auto px-4 py-8">
+            <h2 className="text-3xl font-bold text-center text-[#4A6FA5] mb-6">The CarePath Value for Patients</h2>
+            
+            <p className="text-center mb-8 max-w-3xl mx-auto">
+              Post-op care shouldn't be a burden on patients or providers. Here's how CarePath transforms recovery:
+            </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Traditional Approach - styled in muted colors */}
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold text-gray-700 mb-4">Traditional Second Opinion Challenges</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✕</span>
-                  <span>Consultation fees reaching into the five figures</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✕</span>
-                  <span>Need for expensive travel across state lines to see specialists</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✕</span>
-                  <span>Have to wait weeks, or months, to get an appointment</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✕</span>
-                  <span>Opinions rarely based on latest clinical data or medical evidence</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✕</span>
-                  <span>Limited explanation for why the doctor is prescribing a given treatment</span>
-                </li>{/* Add other traditional challenges with red X */}
-              </ul>
-            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Traditional Approach */}
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-700 mb-4">Traditional Post-Op Challenges</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✕</span>
+                    <span>Multiple office visits requiring difficult travel with reduced mobility</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✕</span>
+                    <span>Rushed appointments that leave questions unanswered</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✕</span>
+                    <span>No access to care team between appointments</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✕</span>
+                    <span>Delayed responses to complications or concerns</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">✕</span>
+                    <span>Complex medication and PT schedules to manage alone</span>
+                  </li>
+                </ul>
+              </div>
 
-              {/* Surgery.AI Solution - styled in brand colors */}
+              {/* CarePath Solution */}
               <div className="bg-[#4A6FA5] text-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-4">The Surgery.AI Solution</h3>
+                <h3 className="text-xl font-bold mb-4">The CarePath Solution</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-green-300 mr-2">✓</span>
-                    <span>Comprehensive analysis and expert opinion for under $1,500</span>
+                    <span>24/7 access to experienced PAs for questions and concerns</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-300 mr-2">✓</span>
-                    <span>No travel required - everything is done remotely</span>
+                    <span>Virtual PT and recovery monitoring from home</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-300 mr-2">✓</span>
-                    <span>Full medical record analysis with state-of-the-art AI</span>
+                    <span>Proactive complication prevention with AI monitoring</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-300 mr-2">✓</span>
-                    <span>Results delivered in 24 hours</span>
+                    <span>Automated medication reminders and wound care guidance</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-300 mr-2">✓</span>
-                    <span>Access to top surgical experts no matter where you live</span>
+                    <span>Comprehensive recovery support and education</span>
                   </li>
                 </ul>
               </div>
@@ -100,33 +98,16 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-16 bg-[#F0F4F8]">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-[#4A6FA5] text-center">Our Commitment to You</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Accessibility</h3>
-                <p>We're breaking down geographical barriers, ensuring that everyone has access to top-tier surgical expertise, regardless of their location.</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Affordability</h3>
-                <p>By leveraging technology, we're able to provide expert surgical guidance at a fraction of the cost of traditional second opinions.</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-2 text-[#4A6FA5]">Accuracy</h3>
-                <p>Our combination of AI-powered analysis and expert review ensures you receive the most up-to-date and accurate guidance for your unique situation.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        {/* Final CTA Section */}
         <section className="py-16">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-[#4A6FA5]">Experience the Surgery.AI Difference</h2>
-            <p className="text-xl mb-8">Get comprehensive, data-driven surgical guidance without the wait, travel, or excessive costs</p>
-            <Button size="lg" className="bg-[#4A6FA5] text-white hover:bg-[#3A5A8C] text-lg md:text-xl py-3 px-6">
-              Get Your Expert Opinion Now
-            </Button>
+            <h2 className="text-3xl font-bold mb-6 text-[#4A6FA5]">Transform Your Practice with CarePath</h2>
+            <p className="text-xl mb-8">Give your patients premium post-op care while reducing your administrative workload</p>
+            <Link href="/get-started">
+              <Button size="lg" className="bg-[#4A6FA5] text-white hover:bg-[#3A5A8C] text-lg md:text-xl py-3 px-6">
+                Get A Demo Today
+              </Button>
+            </Link>
           </div>
         </section>
       </main>
