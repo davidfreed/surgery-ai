@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { Button } from '@/components/ui/button'
-import { Toaster, toast } from 'react-hot-toast'
 
 export default function Contact() {
   const [submitting, setSubmitting] = useState(false)
@@ -23,7 +22,7 @@ export default function Contact() {
       const address = formData.get('address')?.toString().trim();
       
       if (!name || !email || !surgeries || !address) {
-        toast.error('Please fill in all required fields');
+        window.alert('CarePath: Please fill in all required fields');
         setSubmitting(false);
         return;
       }
@@ -36,18 +35,12 @@ export default function Contact() {
       );
       
       if (result.text === 'OK') {
-        toast.success('Thank you! We will contact you within 24 hours to schedule a demo.', {
-          duration: 5000,
-          style: {
-            background: '#4A6FA5',
-            color: '#fff',
-          },
-        });
+        window.alert('CarePath: Thank you! We will contact you within 24 hours to schedule a demo.');
         form.reset();
       }
     } catch (error) {
       console.error('Failed to send email:', error);
-      toast.error('Sorry, there was an error sending your message. Please try again.');
+      window.alert('CarePath: Sorry, there was an error sending your message. Please try again.');
     } finally {
       setSubmitting(false);
     }
@@ -55,7 +48,6 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
-      <Toaster position="top-center" />
       <div className="container mx-auto px-4 max-w-2xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
           {/* Header */}
